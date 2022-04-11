@@ -1,0 +1,86 @@
+{
+	"vue3 template": {
+		"prefix": "vue3",
+		"body": [
+			"<template>",
+			"  ",
+			"</template>",
+			"",
+			"<script lang=\"ts\">",
+			"  import { defineComponent } from 'vue'",
+			"  export default defineComponent ({",
+			"    ",
+			"  })",
+			"</script>",
+			"",
+			"<style lang=\"scss\" scoped>",
+			"</style>"
+		],
+		"description": "vue3模板"
+	},
+	"template": {
+		"prefix": "template",
+		"body": [
+			"<template>",
+			"\t<div$2>",
+			"\t\t$0",
+			"\t</div>",
+			"</template>"
+		],
+		"description": "template模版"
+	},
+	"script": {
+		"prefix": "script",
+		"body": [
+			"<script setup lang=\"ts\">",
+			"\t$0",
+			"</script>"
+		],
+		"description": "script with setup and tslang"
+	},
+	"style": {
+		"prefix": "style",
+		"body": [
+			"<style lang=\"$0\" scoped>",
+			"\t",
+			"</style>"
+		],
+		"description": "style element with lang attribute"
+	},
+	"styleCss": {
+		"prefix": "css",
+		"body": [
+			"<style scoped>",
+			"\t$0",
+			"</style>"
+		],
+		"description": "css style"
+	},
+	"styleScss": {
+		"prefix": "scss",
+		"body": [
+			"<style lang=\"scss\" scoped>",
+			"\t$0",
+			"</style>"
+		],
+		"description": "Scss style"
+	},
+	"styleSass": {
+		"prefix": "sass",
+		"body": [
+			"<style lang=\"sass\" scoped>",
+			"\t$0",
+			"</style>"
+		],
+		"description": "Sass style"
+	},
+	"styleLess": {
+		"prefix": "less",
+		"body": [
+			"<style lang=\"less\" scoped>",
+			"\t$0",
+			"</style>"
+		],
+		"description": "Less style"
+	}
+}

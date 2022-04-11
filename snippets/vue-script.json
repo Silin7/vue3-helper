@@ -1,0 +1,77 @@
+{
+  "console log": {
+    "prefix": "log",
+    "body": [
+      "console.log('被输出值{ $1 }的输出结果是：', $2);"
+    ],
+    "description": "console.log模板"
+  },
+  "function": {
+		"prefix": "func",
+		"body": [
+			"function $1($2): void {",
+			"    ",
+			"}"
+		],
+		"description": "返回值为void的函数"
+	},
+  "import": {
+      "prefix": "import",
+      "body": [
+          "import { $1 } from '$2'"
+      ],
+      "description": "import {...} from ..."
+  },
+  "setup": {
+      "prefix": "setup",
+      "body": [
+          "setup($3,$4) {",
+          "\t$0",
+          "\treturn {",
+          "\t\t$1",
+          "\t}",
+          "},"
+      ],
+      "description": "setup"
+  },
+  "defineProps": {
+      "prefix": "vprops",
+      "body": [
+          "const props = defineProps({\t",
+          "${0:name} : ${1:value}\t",
+          "})"
+      ],
+      "description": "defineProps element"
+  },
+  "defineEmits": {
+      "prefix": "vemits",
+      "body": [
+          "const props = defineEmits([\t",
+          "\"$0\"\t",
+          "])"
+      ],
+      "description": "defineEmits element"
+  },
+  "Methods": {
+      "prefix": "vmethod",
+      "body": [
+          "methods: {",
+          "\t${1:name}() {",
+          "\t\t${0}",
+          "\t}",
+          "},"
+      ],
+      "description": "vue method"
+  },
+  "Computed": {
+      "prefix": "vcomputed",
+      "body": [
+          "computed: {",
+          "\t${1:name}() {",
+          "\t\treturn this.${2:data} ${0}",
+          "\t}",
+          "},"
+      ],
+      "description": "computed value"
+  }
+}
