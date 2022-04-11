@@ -7,7 +7,7 @@
         "helper",
         "Silin7"
     ],
-    "version": "1.0.0",
+    "version": "0.0.1",
     "publisher": "Silin7",
     "engines": {
         "vscode": "^1.27.0"
@@ -171,11 +171,11 @@
     },
     "license": "SEE LICENSE IN LICENSE.txt",
     "bugs": {
-        "url": "https://github.com/sxei/vscode-plugin-demo/issues"
+        "url": "https://github.com/sxei/vue3-helper/issues"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/sxei/vscode-plugin-demo"
+        "url": "https://github.com/sxei/vue3-helper"
     },
-    "homepage": "https://github.com/sxei/vscode-plugin-demo/blob/master/README.md"
+    "homepage": "https://github.com/sxei/vue3-helper/blob/master/README.md"
 }

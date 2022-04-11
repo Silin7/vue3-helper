@@ -5,7 +5,7 @@ const vscode = require('vscode');
  * @param {*} context 插件上下文
  */
 exports.activate = function(context) {
-    console.log('恭喜，您的扩展“vscode-plugin-demo”已被激活！');
+    console.log('恭喜，您的扩展“vue3-helper”已被激活！');
     console.log(vscode);
     require('./helloword')(context); // helloworld
     require('./test-command-params')(context); // 测试命令参数
@@ -29,5 +29,5 @@ exports.activate = function(context) {
  * 插件被释放时触发
  */
 exports.deactivate = function() {
-    console.log('您的扩展“vscode-plugin-demo”已被释放！')
+    console.log('您的扩展“vue3-helper”已被释放！')
 };
