@@ -9,6 +9,7 @@
     ],
     "version": "0.0.1",
     "publisher": "Silin7",
+    "license": "MIT",
     "engines": {
         "vscode": "^1.27.0"
     },
@@ -169,13 +170,12 @@
         "@types/node": "^7.0.43",
         "@types/mocha": "^2.2.42"
     },
-    "license": "SEE LICENSE IN LICENSE.txt",
     "bugs": {
-        "url": "https://github.com/sxei/vue3-helper/issues"
+        "url": "https://github.com/Silin7/vue3-helper/issues"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/sxei/vue3-helper"
+        "url": "https://github.com/Silin7/vue3-helper"
     },
-    "homepage": "https://github.com/sxei/vue3-helper/blob/master/README.md"
+    "homepage": "https://github.com/Silin7/vue3-helper/blob/master/README.md"
 }
