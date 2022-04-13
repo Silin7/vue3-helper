@@ -51,7 +51,7 @@ const messageHandler = {
 
 module.exports = function(context) {
 
-    context.subscriptions.push(vscode.commands.registerCommand('extension.demo.showWelcome', function (uri) {
+    context.subscriptions.push(vscode.commands.registerCommand('extension.showWelcome', function (uri) {
         const panel = vscode.window.createWebviewPanel(
             'testWelcome', // viewType
             "自定义欢迎页", // 视图标题
@@ -71,9 +71,10 @@ module.exports = function(context) {
         }, undefined, context.subscriptions);
     }));
 
-    const key = 'vscodePluginDemo.showTip';
+    // const key = 'vscodePluginDemo.showTip';
     // 如果设置里面开启了欢迎页显示，启动欢迎页
-    if (vscode.workspace.getConfiguration().get(key)) {
-        vscode.commands.executeCommand('extension.demo.showWelcome');
-    }
+    // if (vscode.workspace.getConfiguration().get(key)) {
+    //     vscode.commands.executeCommand('extension.showWelcome');
+    // }
+    vscode.commands.executeCommand('extension.showWelcome');
 };

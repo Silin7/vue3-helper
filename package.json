@@ -26,7 +26,22 @@
     "categories": [
         "Other"
     ],
+    "activationEvents": [
+      "onCommand:extension.sayHello"
+    ],
+    "main": "./src/extension",
     "contributes": {
+        "configuration": {
+            "type": "object",
+            "title": "vue3-helper",
+            "properties": {
+              "vscodePluginDemo.showTip": {
+                "type": "boolean",
+                "default": true,
+                "description": "是否在每次启动时显示自定义主页"
+              }
+            }
+          },
         "commands": [
             {
                 "command": "extension.sayHello",
@@ -59,27 +74,10 @@
                     "group": "navigation@4"
                 }
             ],
-            "editor/title": [
-                {
-                    "when": "editorFocus && resourceLangId == javascript",
-                    "command": "extension.testMenuShow",
-                    "group": "navigation"
-                }
-            ],
-            "editor/title/context": [
-                {
-                    "when": "resourceLangId == javascript",
-                    "command": "extension.testMenuShow",
-                    "group": "navigation"
-                }
-            ],
+        
             "explorer/context": [
                 {
                     "command": "extension.getCurrentFilePath",
-                    "group": "navigation"
-                },
-                {
-                    "command": "extension.openWebview",
                     "group": "navigation"
                 }
             ]
