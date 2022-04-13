@@ -1,81 +1,44 @@
 {
     "name": "vue3-helper",
     "displayName": "vue3-helper",
-    "description": "vue3-helper",
+    "description": "一款能大幅提升Vue开发效率的插件。",
+    "version": "0.0.2",
+    "publisher": "Silin7",
+    "icon": "images/icon.png",
     "keywords": [
         "vue3",
         "helper",
         "Silin7"
     ],
-    "version": "0.0.1",
-    "publisher": "Silin7",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Silin7/vue3-helper"
+    },
+    "bugs": {
+        "url": "https://github.com/Silin7/vue3-helper/issues",
+        "email": "silin7@foxmail.com"
+    },
+    "homepage": "https://github.com/Silin7/vue3-helper/blob/master/README.md",
     "license": "MIT",
     "engines": {
-        "vscode": "^1.27.0"
+        "vscode": "^1.63.0"
     },
     "categories": [
         "Other"
     ],
-    "icon": "images/icon.png",
-    "activationEvents": [
-        "onLanguage:javascript"
-    ],
-    "main": "./src/extension",
     "contributes": {
-        "configuration": {
-            "type": "object",
-            "title": "vue3-helper",
-            "properties": {
-                "vscodePluginDemo.yourName": {
-                    "type": "string",
-                    "default": "Silin7",
-                    "description": "你的名字"
-                },
-                "vscodePluginDemo.showTip": {
-                    "type": "boolean",
-                    "default": true,
-                    "description": "启动时显示自定义欢迎页"
-                }
-            }
-        },
         "commands": [
             {
-                "command": "extension.sayHello2",
+                "command": "extension.sayHello",
                 "title": "Hello Silin7"
             },
             {
-                "command": "extension.demo.getCurrentFilePath",
+                "command": "extension.getCurrentFilePath",
                 "title": "获取当前文件(夹)路径"
             },
             {
-                "command": "extension.demo.testMenuShow",
-                "title": "这个菜单仅在JS文件中出现",
-                "icon": {
-                    "light": "./images/tool-light.svg",
-                    "dark": "./images/tool-light.svg"
-                }
-            },
-            {
-                "command": "extension.demo.openWebview",
-                "title": "打开WebView"
-            },
-            {
-                "command": "extension.demo.showWelcome",
+                "command": "extension.showWelcome",
                 "title": "显示自定义欢迎页"
-            }
-        ],
-        "keybindings": [
-            {
-                "command": "extension.sayHello",
-                "key": "ctrl+f10",
-                "mac": "cmd+f10",
-                "when": "editorTextFocus"
-            },
-            {
-                "command": "extension.demo.openWebview",
-                "key": "ctrl+f9",
-                "mac": "cmd+f9",
-                "when": "editorTextFocus"
             }
         ],
         "menus": {
@@ -87,40 +50,36 @@
                 },
                 {
                     "when": "editorFocus",
-                    "command": "extension.demo.getCurrentFilePath",
+                    "command": "extension.getCurrentFilePath",
                     "group": "navigation@5"
                 },
                 {
-                    "when": "editorFocus && resourceLangId == javascript",
-                    "command": "extension.demo.testMenuShow",
-                    "group": "z_commands"
-                },
-                {
-                    "command": "extension.demo.openWebview",
-                    "group": "navigation"
+                    "when": "editorFocus",
+                    "command": "extension.showWelcome",
+                    "group": "navigation@4"
                 }
             ],
             "editor/title": [
                 {
                     "when": "editorFocus && resourceLangId == javascript",
-                    "command": "extension.demo.testMenuShow",
+                    "command": "extension.testMenuShow",
                     "group": "navigation"
                 }
             ],
             "editor/title/context": [
                 {
                     "when": "resourceLangId == javascript",
-                    "command": "extension.demo.testMenuShow",
+                    "command": "extension.testMenuShow",
                     "group": "navigation"
                 }
             ],
             "explorer/context": [
                 {
-                    "command": "extension.demo.getCurrentFilePath",
+                    "command": "extension.getCurrentFilePath",
                     "group": "navigation"
                 },
                 {
-                    "command": "extension.demo.openWebview",
+                    "command": "extension.openWebview",
                     "group": "navigation"
                 }
             ]
@@ -150,32 +109,13 @@
                 "language": "typescript",
                 "path": "./snippets/vue-router.json"
             }
-        ],
-        "iconThemes": [
-            {
-                "id": "testIconTheme",
-                "label": "测试图标主题",
-                "path": "/images/icon.png"
-            }
         ]
-    },
-    "scripts": {
-        "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "node ./node_modules/vscode/bin/test"
     },
     "devDependencies": {
         "typescript": "^2.6.1",
-        "vscode": "^1.1.6",
+        "vscode": "^1.63.0",
         "eslint": "^4.11.0",
         "@types/node": "^7.0.43",
         "@types/mocha": "^2.2.42"
-    },
-    "bugs": {
-        "url": "https://github.com/Silin7/vue3-helper/issues"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/Silin7/vue3-helper"
-    },
-    "homepage": "https://github.com/Silin7/vue3-helper/blob/master/README.md"
+    }
 }
