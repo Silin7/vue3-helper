@@ -86,6 +86,10 @@
         },
         "snippets": [
             {
+                "language": "css",
+                "path": "./snippets/css.json"
+            },
+            {
                 "language": "vue",
                 "path": "./snippets/vue.json"
             },

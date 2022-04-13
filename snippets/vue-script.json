@@ -10,7 +10,7 @@
 		"prefix": "func",
 		"body": [
 			"function $1($2): void {",
-			"    ",
+			"    $3",
 			"}"
 		],
 		"description": "返回值为void的函数"
