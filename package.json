@@ -26,10 +26,6 @@
     "categories": [
         "Other"
     ],
-    "activationEvents": [
-      "onCommand:extension.sayHello"
-    ],
-    "main": "./src/extension",
     "contributes": {
         "configuration": {
             "type": "object",
