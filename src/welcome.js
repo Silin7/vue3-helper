@@ -32,7 +32,7 @@ module.exports = function (context) {
         enableScripts: true, // 启用JS，默认禁用
       }
     );
-    panel.webview.html = getWebViewContent(context, 'src/view/custom-welcome.html');
+    panel.webview.html = getWebViewContent(context, 'src/view/welcome.html');
   }));
 
   // const key = 'vscodePluginDemo.showTip';

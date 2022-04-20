@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>滚去写代码</title>
+  <script src="../../lib/jquery/jquery.min.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .pageBox {
+      box-sizing: border-box;
+      overflow-y: auto;
+      width: 100%;
+      height: 100vh;
+      padding: 10px 5vw;
+      display: flex;
+      flex-flow: column;
+      justify-content: space-around;
+    }
+
+    .pageMain {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .girlBox {
+      width: 540px;
+      padding: 20px 20px;
+    }
+
+    .titleBox {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .urlTitle {
+      height: 40px;
+      line-height: 40px;
+      color: #646566;
+    }
+
+    .changeBtn {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #333;
+    }
+
+    .urlList {
+      max-height: 600px;
+      overflow-y: auto;
+      display: flex;
+      flex-flow: column;
+      justify-content: flex-start;
+    }
+
+    .urlBox {
+      height: 60px;
+      display: flex;
+      align-items: center;
+    }
+
+    .urlLabel {
+      width: 60px;
+      font-size: 14px;
+      color: #646566;
+    }
+
+    .urlValue {
+      width: 480px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      word-break: break-all;
+    }
+
+    .urlValue a {
+      color: #0066cc;
+    }
+
+    .xhBox {
+      margin: 10px 0px;
+      display: flex;
+      align-items: center;
+    }
+
+    .xhValue {
+      font-size: 12px;
+      line-height: 20px;
+      text-indent: 24px;
+    }
+
+    .xhValueCo1 {
+      color: #0066cc;
+    }
+
+    .xhValueCo2 {
+      color: #646566;
+    }
+
+    .introduction {
+      width: 100%;
+      height: 100px;
+      background-image: url('/src/static/image/table.gif');
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      border: 1px solid red;
+    }
+
+
+
+    .alert-success {
+      background-image: -webkit-linear-gradient(top, #dff0d8 0%, #c8e5bc 100%);
+      background-image: -o-linear-gradient(top, #dff0d8 0%, #c8e5bc 100%);
+      background-image: -webkit-gradient(linear, left top, left bottom, from(#dff0d8), to(#c8e5bc));
+      background-image: linear-gradient(to bottom, #dff0d8 0%, #c8e5bc 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffdff0d8', endColorstr='#ffc8e5bc', GradientType=0);
+      background-repeat: repeat-x;
+      border-color: #b2dba1;
+    }
+
+    .mb10 {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="pageBox">
+    <div class="pageMain">
+      <div id="girlBox" class="alert-success girlBox">
+        <div class="titleBox">
+          <div></div>
+          <div class="urlTitle">随机福利图</div>
+          <div id="mvdataBtn" class="changeBtn">
+            <span style="margin-top: 2px;">
+              <svg t="1650419794418" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                xmlns="http://www.w3.org/2000/svg" p-id="3282" width="12" height="12">
+                <path
+                  d="M924.37 526.56a35.86 35.86 0 0 1-35.92-34.18C877.69 293.1 712.78 137 513 137a376.13 376.13 0 0 0-348.38 234.26 36 36 0 1 1-66.68-27.15A448.13 448.13 0 0 1 513 65c156.94 0 295.82 80.86 375.9 204 0.05-42.91 0.08-86.24 0.1-124a36 36 0 0 1 72 0s0 86.4-0.15 172.8c-0.06 50.17-0.12 90.15-0.19 118.83 0 16.23-0.07 29.76-0.12 39.22 0 4.8 0 8.57-0.06 11.14v3.22c-0.42 23-18.39 35.87-35.07 36.32zM513 961a445.91 445.91 0 0 1-310.22-124.78 451.16 451.16 0 0 1-65.72-79.34c0 40.59-0.05 81.34-0.06 117.13a36 36 0 0 1-36 36 36 36 0 0 1-36-36s0-85.74 0.1-171.47c0-42.88 0.07-85.75 0.12-117.91 0-16.1 0-29.51 0.08-38.9v-11-3.09c0.27-23.25 18.36-36.18 35.24-36.54a36.07 36.07 0 0 1 36.75 34.51 376.08 376.08 0 0 0 728.34 114.2 36 36 0 1 1 67.5 25.05A448.14 448.14 0 0 1 513 961z"
+                  p-id="3283" fill="#333333"></path>
+              </svg>
+            </span>
+            <span style="margin-left: 5px;">换一批</span>
+          </div>
+        </div>
+        <div id="mvListBox" class="urlList"></div>
+      </div>
+      <div id="xiaoBox" class="alert-success girlBox">
+        <div class="titleBox">
+          <div></div>
+          <div class="urlTitle">随机笑话</div>
+          <div id="xhdataBtn" class="changeBtn">
+            <span style="margin-top: 2px;">
+              <svg t="1650419794418" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                xmlns="http://www.w3.org/2000/svg" p-id="3282" width="12" height="12">
+                <path
+                  d="M924.37 526.56a35.86 35.86 0 0 1-35.92-34.18C877.69 293.1 712.78 137 513 137a376.13 376.13 0 0 0-348.38 234.26 36 36 0 1 1-66.68-27.15A448.13 448.13 0 0 1 513 65c156.94 0 295.82 80.86 375.9 204 0.05-42.91 0.08-86.24 0.1-124a36 36 0 0 1 72 0s0 86.4-0.15 172.8c-0.06 50.17-0.12 90.15-0.19 118.83 0 16.23-0.07 29.76-0.12 39.22 0 4.8 0 8.57-0.06 11.14v3.22c-0.42 23-18.39 35.87-35.07 36.32zM513 961a445.91 445.91 0 0 1-310.22-124.78 451.16 451.16 0 0 1-65.72-79.34c0 40.59-0.05 81.34-0.06 117.13a36 36 0 0 1-36 36 36 36 0 0 1-36-36s0-85.74 0.1-171.47c0-42.88 0.07-85.75 0.12-117.91 0-16.1 0-29.51 0.08-38.9v-11-3.09c0.27-23.25 18.36-36.18 35.24-36.54a36.07 36.07 0 0 1 36.75 34.51 376.08 376.08 0 0 0 728.34 114.2 36 36 0 1 1 67.5 25.05A448.14 448.14 0 0 1 513 961z"
+                  p-id="3283" fill="#333333"></path>
+              </svg>
+            </span>
+            <span style="margin-left: 5px;">换一批</span>
+          </div>
+        </div>
+        <div id="xhListBox" class="urlList"></div>
+      </div>
+    </div>
+    <div class="introduction ">
+    </div>
+  </div>
+</body>
+
+</html>
+
+
+
+<script>
+  var mvList = []
+  var xhList = []
+  window.onload = function () {
+      // 初始化福利图列表
+      $.ajax({
+        type: "get",
+        url: "https://www.mxnzp.com/api/image/girl/list/random?app_id=rtqbawfrwfapaxrq&app_secret=R1JRaDBFYnZHR3Q5TmhidTV5OTlsZz09",
+        data: {},
+        dataType: "json",
+        success: (data) => {
+          if (data.code) {
+            mvList = data.data
+            $.each(mvList, function (index, value) {
+              $("#mvListBox").append(`
+              <div class="urlBox">
+                <div class="urlLabel">美图${index + 1}：</div>
+                <div class="urlValue">
+                  <a href="${value.imageUrl}">${value.imageUrl}</a>
+                </div>
+              </div>
+            `)
+            })
+          }
+
+        }
+      })
+      // 初始化段子列表
+      $.ajax({
+        type: "get",
+        url: "https://www.mxnzp.com/api/jokes/list/random?app_id=rtqbawfrwfapaxrq&app_secret=R1JRaDBFYnZHR3Q5TmhidTV5OTlsZz09",
+        data: {},
+        dataType: "json",
+        success: (data) => {
+          if (data.code) {
+            xhList = data.data
+            $.each(xhList, function (index, value) {
+              $("#xhListBox").append(`
+              <div class="xhBox">
+                <div class="xhValue ${index % 2 === 0 ? 'xhValueCo1' : 'xhValueCo2'}">
+                  ${value.content}
+                </div>
+              </div>
+            `)
+            })
+          }
+
+        }
+      })
+    },
+
+    // 随机福利图 换一批
+    $(document).ready(function () {
+      $("#mvdataBtn").click(function () {
+        $("#mvListBox").remove()
+        $("#girlBox").append(`<div id="mvListBox" class="urlList"></div>`)
+        $.ajax({
+          type: "get",
+          url: "https://www.mxnzp.com/api/image/girl/list/random?app_id=rtqbawfrwfapaxrq&app_secret=R1JRaDBFYnZHR3Q5TmhidTV5OTlsZz09",
+          data: {},
+          dataType: "json",
+          success: function (data) {
+            if (data.code) {
+              mvList = data.data
+            }
+            $.each(mvList, function (index, value) {
+              $("#mvListBox").append(`
+              <div class="urlBox">
+                <div class="urlLabel">美图${index + 1}：</div>
+                <div class="urlValue">
+                  <a href="${value.imageUrl}">${value.imageUrl}</a>
+                </div>
+              </div>
+            `)
+            })
+          }
+        })
+      })
+    })
+
+  // 随机笑话 换一批
+  $(document).ready(function () {
+    $("#xhdataBtn").click(function () {
+      $("#xhListBox").remove()
+      $("#xiaoBox").append(`<div id="xhListBox" class="urlList"></div>`)
+      $.ajax({
+        type: "get",
+        url: "https://www.mxnzp.com/api/jokes/list/random?app_id=rtqbawfrwfapaxrq&app_secret=R1JRaDBFYnZHR3Q5TmhidTV5OTlsZz09",
+        data: {},
+        dataType: "json",
+        success: function (data) {
+          if (data.code) {
+            mvList = data.data
+          }
+          $.each(mvList, function (index, value) {
+            $("#xhListBox").append(`
+              <div class="xhBox">
+                <div class="xhValue ${index % 2 === 0 ? 'xhValueCo1' : 'xhValueCo2'}">
+                  ${value.content}
+                </div>
+              </div>
+            `)
+          })
+        }
+      })
+    })
+  })
+</script>
+
+<!-- duanzi -->
+<!--  -->
+
+<!-- https://www.mxnzp.com/api/image/girl/list/random?app_id=rtqbawfrwfapaxrq&app_secret=R1JRaDBFYnZHR3Q5TmhidTV5OTlsZz09 -->

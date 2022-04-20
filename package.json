@@ -42,8 +42,7 @@
                 }
             }
         },
-        "commands": [
-            {
+        "commands": [{
                 "command": "extension.showWelcome",
                 "title": "显示自定义欢迎页"
             },
@@ -52,34 +51,52 @@
                 "title": "小游戏-贪吃蛇"
             },
             {
+                "command": "extension.showZhuoqiu",
+                "title": "小游戏-2D桌球"
+            },
+            {
                 "command": "extension.getCurrentFilePath",
                 "title": "获取当前文件(夹)路径"
             },
             {
-                "command": "extension.sayHello",
-                "title": "Hello Silin7"
+                "command": "extension.beautyWelfare",
+                "title": "随机美女福利图"
+            },
+            {
+                "command": "extension.randomJoke",
+                "title": "随机笑话"
             }
         ],
         "menus": {
-            "editor/context": [
-                {
+            "editor/context": [{
                     "when": "editorFocus",
                     "command": "extension.showWelcome",
-                    "group": "navigation@4"
-                },
-                {
-                    "when": "editorFocus",
-                    "command": "extension.showTanchi",
                     "group": "navigation@3"
                 },
                 {
                     "when": "editorFocus",
-                    "command": "extension.getCurrentFilePath",
-                    "group": "navigation@5"
-                },{
+                    "command": "extension.showTanchi",
+                    "group": "navigation@4"
+                },
+                {
                     "when": "editorFocus",
-                    "command": "extension.sayHello",
+                    "command": "extension.showZhuoqiu",
+                    "group": "navigation@5"
+                },
+                {
+                    "when": "editorFocus",
+                    "command": "extension.getCurrentFilePath",
                     "group": "navigation@6"
+                },
+                {
+                    "when": "editorFocus",
+                    "command": "extension.beautyWelfare",
+                    "group": "navigation@7"
+                },
+                {
+                    "when": "editorFocus",
+                    "command": "extension.randomJoke",
+                    "group": "navigation@8"
                 }
             ],
 
