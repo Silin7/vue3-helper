@@ -26,60 +26,69 @@
     "categories": [
         "Other"
     ],
+    "activationEvents": [
+        "*"
+    ],
+    "main": "./src/extension",
     "contributes": {
         "configuration": {
             "type": "object",
             "title": "vue3-helper",
             "properties": {
-              "vscodePluginDemo.showTip": {
-                "type": "boolean",
-                "default": true,
-                "description": "是否在每次启动时显示自定义主页"
-              }
+                "vscodePluginDemo.showTip": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "是否在每次启动时显示自定义主页"
+                }
             }
-          },
+        },
         "commands": [
             {
-                "command": "extension.sayHello",
-                "title": "Hello Silin7"
+                "command": "extension.showWelcome",
+                "title": "显示自定义欢迎页"
+            },
+            {
+                "command": "extension.showTanchi",
+                "title": "小游戏-贪吃蛇"
             },
             {
                 "command": "extension.getCurrentFilePath",
                 "title": "获取当前文件(夹)路径"
             },
             {
-                "command": "extension.showWelcome",
-                "title": "显示自定义欢迎页"
+                "command": "extension.sayHello",
+                "title": "Hello Silin7"
             }
         ],
         "menus": {
             "editor/context": [
                 {
                     "when": "editorFocus",
-                    "command": "extension.sayHello",
-                    "group": "navigation@6"
+                    "command": "extension.showWelcome",
+                    "group": "navigation@4"
+                },
+                {
+                    "when": "editorFocus",
+                    "command": "extension.showTanchi",
+                    "group": "navigation@3"
                 },
                 {
                     "when": "editorFocus",
                     "command": "extension.getCurrentFilePath",
                     "group": "navigation@5"
-                },
-                {
+                },{
                     "when": "editorFocus",
-                    "command": "extension.showWelcome",
-                    "group": "navigation@4"
+                    "command": "extension.sayHello",
+                    "group": "navigation@6"
                 }
             ],
-        
-            "explorer/context": [
-                {
-                    "command": "extension.getCurrentFilePath",
-                    "group": "navigation"
-                }
-            ]
+
+            "explorer/context": [{
+                "command": "extension.getCurrentFilePath",
+                "group": "navigation"
+            }]
         },
-        "snippets": [
-            {
+        "snippets": [{
                 "language": "css",
                 "path": "./snippets/css.json"
             },

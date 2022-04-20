@@ -21,42 +21,8 @@ function getWebViewContent(context, templatePath) {
   return html;
 }
 
-/**
- * 执行回调函数
- * @param {*} panel 
- * @param {*} message 
- * @param {*} resp 
- */
-function invokeCallback(panel, message, resp) {
-  console.log('回调消息：', resp);
-  // 错误码在400-600之间的，默认弹出错误提示
-  if (typeof resp == 'object' && resp.code && resp.code >= 400 && resp.code < 600) {
-    util.showError(resp.message || '发生未知错误！');
-  }
-  panel.webview.postMessage({
-    cmd: 'vscodeCallback',
-    cbid: message.cbid,
-    data: resp
-  });
-}
-
-/**
- * 存放所有消息回调函数，根据 message.cmd 来决定调用哪个方法
- */
-const messageHandler = {
-  getConfig(global, message) {
-    const result = vscode.workspace.getConfiguration().get(message.key);
-    invokeCallback(global.panel, message, result);
-  },
-  setConfig(global, message) {
-    // 写入配置文件，注意，默认写入工作区配置，而不是用户配置，最后一个true表示写入全局用户配置
-    vscode.workspace.getConfiguration().update(message.key, message.value, true);
-    util.showInfo('修改配置成功！');
-  }
-};
 
 module.exports = function (context) {
-
   context.subscriptions.push(vscode.commands.registerCommand('extension.showWelcome', function (uri) {
     const panel = vscode.window.createWebviewPanel(
       'testWelcome', // viewType
@@ -66,17 +32,7 @@ module.exports = function (context) {
         enableScripts: true, // 启用JS，默认禁用
       }
     );
-    let global = {
-      panel
-    };
     panel.webview.html = getWebViewContent(context, 'src/view/custom-welcome.html');
-    panel.webview.onDidReceiveMessage(message => {
-      if (messageHandler[message.cmd]) {
-        messageHandler[message.cmd](global, message);
-      } else {
-        util.showError(`未找到名为 ${message.cmd} 回调方法!`);
-      }
-    }, undefined, context.subscriptions);
   }));
 
   // const key = 'vscodePluginDemo.showTip';
