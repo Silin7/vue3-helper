@@ -2,7 +2,7 @@
     "name": "vue3-helper",
     "displayName": "vue3-helper",
     "description": "一款能大幅提升Vue开发效率的插件。",
-    "version": "0.0.2",
+    "version": "1.0.0",
     "publisher": "Silin7",
     "icon": "images/icon.png",
     "keywords": [
