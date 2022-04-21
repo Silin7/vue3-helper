@@ -1,4 +1,6 @@
-const vscode = require('vscode');
+const vscode = require('vscode')
+
+vscode.window.showInformationMessage('扩展已被激活')
 
 /**
  * 插件被激活时触发，所有代码总入口

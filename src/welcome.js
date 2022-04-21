@@ -26,7 +26,7 @@ module.exports = function (context) {
   context.subscriptions.push(vscode.commands.registerCommand('extension.showWelcome', function (uri) {
     const panel = vscode.window.createWebviewPanel(
       'testWelcome', // viewType
-      "自定义欢迎页", // 视图标题
+      "休息一下", // 视图标题
       vscode.ViewColumn.One, // 显示在编辑器的哪个部位
       {
         enableScripts: true, // 启用JS，默认禁用

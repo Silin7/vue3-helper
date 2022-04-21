@@ -44,7 +44,7 @@
         },
         "commands": [{
                 "command": "extension.showWelcome",
-                "title": "显示自定义欢迎页"
+                "title": "休息一下"
             },
             {
                 "command": "extension.showTanchi",
